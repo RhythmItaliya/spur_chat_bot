@@ -1,0 +1,35 @@
+{
+  "name": "spur_backend",
+  "version": "1.0.0",
+  "description": "Founding Full‑Stack Engineer Take‑Home Assignment Backend",
+  "main": "dist/index.js",
+  "Author": "rhythm_italiya",
+  "_moduleAliases": {
+    "@": "dist"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "node dist/index.js",
+    "format": "prettier --write \"src/**/*.{ts,js,json}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@heyputer/puter.js": "^2.2.2",
+    "@prisma/client": "^6.19.1",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "module-alias": "^2.2.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "prettier": "^3.7.4",
+    "prisma": "^6.19.1",
+    "typescript": "^5.9.3"
+  }
+}
