@@ -9,6 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
+    "vercel-build": "prisma generate && npm run build",
+    "postinstall": "prisma generate",
     "start": "node dist/index.js",
     "dev": "node dist/index.js",
     "format": "prettier --write \"src/**/*.{ts,js,json}\""
