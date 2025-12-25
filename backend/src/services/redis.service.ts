@@ -13,6 +13,7 @@ client.on('connect', () => {
 
 export const getCache = async (key: string): Promise<string | null> => {
     try {
+        if (client.status !== 'ready') return null;
         return await client.get(key);
     } catch (error) {
         console.error(`Error getting key ${key} from Redis:`, error);
@@ -26,6 +27,7 @@ export const setCache = async (
     ttlSeconds: number = redisConfig.ttl
 ): Promise<void> => {
     try {
+        if (client.status !== 'ready') return;
         await client.set(key, value, 'EX', ttlSeconds);
     } catch (error) {
         console.error(`Error setting key ${key} in Redis:`, error);

@@ -21,6 +21,7 @@ export const historyHandler = async (
 
         res.json({ messages });
     } catch (error) {
+        console.error('History Handler Error:', error);
         res.status(500).json({ error: 'Something went wrong' });
     }
 };

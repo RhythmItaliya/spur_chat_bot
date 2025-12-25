@@ -91,6 +91,7 @@ export const chatHandler = async (
 
         res.json({ reply: aiReply, sessionId: conversationId });
     } catch (error) {
+        console.error('Chat Handler Error:', error);
         res.status(500).json({ error: 'Something went wrong' });
     }
 };

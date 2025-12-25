@@ -13,6 +13,14 @@ setupMiddleware(app);
 
 setupRoutes(app, prisma);
 
-app.listen(serverConfig.port, () => {
-    console.log(`Server running on port ${serverConfig.port}`);
-});
+if (require.main === module) {
+    app.listen(serverConfig.port, () => {
+        console.log(`Server running on port ${serverConfig.port}`);
+        prisma
+            .$connect()
+            .then(() => console.log('Database connected successfully'))
+            .catch((err) => console.error('Database connection failed:', err));
+    });
+}
+
+export default app;
