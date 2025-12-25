@@ -27,5 +27,5 @@ export const serverConfig: ServerConfig = {
 
 export const redisConfig: RedisConfig = {
     url: process.env.REDIS_URL || 'redis://localhost:6379',
-    ttl: parseInt(process.env.CACHE_TTL || '3600'),
+    ttl: parseInt(process.env.CACHE_TTL || '600'),
 };
