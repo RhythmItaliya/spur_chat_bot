@@ -19,7 +19,7 @@ if (require.main === module) {
         prisma
             .$connect()
             .then(() => console.log('Database connected successfully'))
-            .catch((err) => console.error('Database connection failed:', err));
+            .catch((err: Error) => console.error('Database connection failed:', err));
     });
 }
 
