@@ -1,15 +1,13 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/index.ts",
-            "use": "@vercel/node"
+    "live": {
+        "enabled": true,
+        "concurrentEditors": 5
+    },
+    "functions": {
+        "api/**/*": {
+            "memory": 1024,
+            "maxDuration": 60
         }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.ts"
-        }
-    ]
+    }
 }
