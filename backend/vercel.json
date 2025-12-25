@@ -1,13 +1,9 @@
 {
-    "version": 2,
-    "live": {
-        "enabled": true,
-        "concurrentEditors": 5
-    },
-    "functions": {
-        "api/**/*": {
-            "memory": 1024,
-            "maxDuration": 60
-        }
+  "version": 2,
+  "functions": {
+    "api/**/*": {
+      "memory": 1024,
+      "maxDuration": 60
     }
+  }
 }
