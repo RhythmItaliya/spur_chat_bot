@@ -8,4 +8,4 @@ dist/
 .env
 
 # Logs
-*.log
+*.log.env

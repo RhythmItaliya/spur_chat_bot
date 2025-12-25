@@ -14,5 +14,5 @@ setupMiddleware(app);
 setupRoutes(app, prisma);
 
 app.listen(serverConfig.port, () => {
-  console.log(`Server running on port ${serverConfig.port}`);
+    console.log(`Server running on port ${serverConfig.port}`);
 });

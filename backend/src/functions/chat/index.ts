@@ -1,4 +1,4 @@
 export { chatHandler } from './handler';
-export { generateAIResponse } from './llm/ai.service';
-export { callGoogleAI } from './llm/googleai.llm';
-export { callOpenAI } from './llm/openai.llm';
+export { generateAIResponse } from '@/services/ai.service';
+export { callGoogleAI } from '@/services/llm/googleai.llm';
+export { callOpenAI } from '@/services/llm/openai.llm';
