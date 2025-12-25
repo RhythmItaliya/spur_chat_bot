@@ -47,7 +47,7 @@ export function ChatInput({
     const isValid = message.trim().length > 0;
 
     return (
-        <div className="flex items-end gap-2 p-2 border-t">
+        <div className="flex items-end gap-1.5 md:gap-2 p-2 md:p-3 border-t">
             <Textarea
                 ref={textareaRef}
                 value={message}
@@ -55,16 +55,16 @@ export function ChatInput({
                 onKeyDown={handleKeyDown}
                 placeholder={placeholder}
                 disabled={disabled}
-                className="min-h-[40px] resize-none border rounded p-2 flex-1"
+                className="min-h-[36px] md:min-h-[40px] text-sm resize-none border rounded p-2 flex-1"
                 rows={1}
             />
             <Button
                 onClick={handleSubmit}
                 disabled={disabled || !isValid}
                 size="icon"
-                className="h-10 w-10"
+                className="h-8 w-8 md:h-10 md:w-10 flex-shrink-0"
             >
-                <ArrowUp className="h-4 w-4" />
+                <ArrowUp className="h-3.5 w-3.5 md:h-4 md:w-4" />
                 <span className="sr-only">Send</span>
             </Button>
         </div>

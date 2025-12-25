@@ -31,8 +31,8 @@ const quickReplies = [
 
 export function QuickReplies({ onSelect, disabled }: QuickRepliesProps) {
     return (
-        <div className="flex flex-wrap gap-2 p-2 border-t">
-            <span className="text-xs text-gray-500 w-full">Quick questions:</span>
+        <div className="flex flex-wrap gap-1.5 md:gap-2 p-2 md:p-3 border-t">
+            <span className="text-[10px] md:text-xs text-gray-500 w-full">Quick questions:</span>
             {quickReplies.map((reply) => (
                 <Button
                     key={reply.label}
@@ -40,7 +40,7 @@ export function QuickReplies({ onSelect, disabled }: QuickRepliesProps) {
                     size="sm"
                     disabled={disabled}
                     onClick={() => onSelect(reply.message)}
-                    className="h-8 text-xs"
+                    className="h-7 md:h-8 text-[10px] md:text-xs px-2 md:px-3"
                 >
                     {reply.label}
                 </Button>

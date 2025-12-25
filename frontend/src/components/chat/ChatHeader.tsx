@@ -7,12 +7,12 @@ interface ChatHeaderProps {
 
 export function ChatHeader({ onNewChat }: ChatHeaderProps) {
     return (
-        <div className="flex justify-between p-2 border-b">
+        <div className="flex justify-between p-3 md:p-4 border-b">
             <div className="flex items-center gap-2">
-                <Sparkles className="w-6 h-6" />
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
                 <div>
-                    <h1 className="font-bold">Rhyri Support</h1>
-                    <p className="text-xs text-gray-500">AI Assistant</p>
+                    <h1 className="text-sm md:text-base font-bold">Rhyri Support</h1>
+                    <p className="text-[10px] md:text-xs text-gray-500">AI Assistant</p>
                 </div>
             </div>
             {onNewChat && (

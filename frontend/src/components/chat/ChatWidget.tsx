@@ -27,15 +27,17 @@ export function ChatWidget() {
             <ChatHeader onNewChat={messages.length > 0 ? handleNewChat : undefined} />
 
             {/* Messages area */}
-            <div className="flex-1 overflow-y-auto chat-scroll p-4 space-y-4 min-h-0">
+            <div className="flex-1 overflow-y-auto chat-scroll p-2 md:p-4 space-y-2 md:space-y-4 min-h-0">
                 {isInitializing ? (
                     <div className="flex items-center justify-center h-full">
                         <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
                     </div>
                 ) : messages.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                        <h2 className="font-semibold text-lg mb-2">Welcome to Rhyri Support!</h2>
-                        <p className="text-muted-foreground text-sm">
+                        <h2 className="font-semibold text-base md:text-lg mb-2">
+                            Welcome to Rhyri Support!
+                        </h2>
+                        <p className="text-muted-foreground text-xs md:text-sm">
                             Hi there! I'm Rhyri, your AI support assistant.
                         </p>
                     </div>

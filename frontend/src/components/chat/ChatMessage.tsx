@@ -20,21 +20,25 @@ export function ChatMessage({
     const isUser = sender === "user";
 
     return (
-        <div className={cn("flex gap-2 p-2", isUser ? "flex-row-reverse" : "")}>
-            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                {isUser ? <User className="w-4 h-4" /> : <Sparkles className="w-4 h-4" />}
+        <div className={cn("flex gap-1.5 md:gap-2", isUser ? "flex-row-reverse" : "")}>
+            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                {isUser ? (
+                    <User className="w-3 h-3 md:w-4 md:h-4" />
+                ) : (
+                    <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
+                )}
             </div>
 
             <div
                 className={cn(
-                    "p-2 rounded max-w-[80%]",
+                    "p-2 md:p-3 rounded max-w-[85%] md:max-w-[80%]",
                     isUser ? "bg-blue-600 text-white" : "bg-gray-100",
                 )}
             >
                 {isUser ? (
-                    <p className="text-sm">{text}</p>
+                    <p className="text-xs md:text-sm">{text}</p>
                 ) : (
-                    <div className="text-sm prose prose-sm max-w-none">
+                    <div className="text-xs md:text-sm prose prose-sm max-w-none">
                         <ReactMarkdown>{text}</ReactMarkdown>
                     </div>
                 )}
