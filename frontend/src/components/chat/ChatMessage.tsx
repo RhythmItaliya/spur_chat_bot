@@ -31,7 +31,7 @@ export function ChatMessage({
 
             <div
                 className={cn(
-                    "p-2 md:p-3 rounded max-w-[85%] md:max-w-[80%]",
+                    "p-2 md:p-3 rounded max-w-[85%] md:max-w-[80%] overflow-x-auto",
                     isUser ? "bg-blue-600 text-white" : "bg-gray-100",
                 )}
             >
