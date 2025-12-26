@@ -43,7 +43,10 @@ export function ChatMessage({
                             components={{
                                 code({ node, inline, className, children, ...props }: any) {
                                     return inline ? (
-                                        <code className="bg-gray-200 text-red-600 px-1 py-0.5 rounded text-xs font-mono" {...props}>
+                                        <code
+                                            className="bg-gray-200 text-red-600 px-1 py-0.5 rounded text-xs font-mono"
+                                            {...props}
+                                        >
                                             {children}
                                         </code>
                                     ) : (
@@ -55,32 +58,77 @@ export function ChatMessage({
                                     );
                                 },
                                 p({ children }) {
-                                    return <p className="mb-2 last:mb-0 whitespace-pre-wrap break-words">{children}</p>;
+                                    return (
+                                        <p className="mb-2 last:mb-0 whitespace-pre-wrap break-words">
+                                            {children}
+                                        </p>
+                                    );
                                 },
                                 ul({ children }) {
-                                    return <ul className="list-disc list-inside mb-2 space-y-1">{children}</ul>;
+                                    return (
+                                        <ul className="list-disc ml-4 mb-2 space-y-1">
+                                            {children}
+                                        </ul>
+                                    );
                                 },
                                 ol({ children }) {
-                                    return <ol className="list-decimal list-inside mb-2 space-y-1">{children}</ol>;
+                                    return (
+                                        <ol className="list-decimal ml-4 mb-2 space-y-1">
+                                            {children}
+                                        </ol>
+                                    );
                                 },
-                                li({ children }) {
-                                    return <li className="ml-2">{children}</li>;
+                                li({ children, ...props }) {
+                                    const hasNestedList =
+                                        Array.isArray(children) &&
+                                        children.some(
+                                            (child: any) =>
+                                                child?.type === "ul" || child?.type === "ol",
+                                        );
+
+                                    return (
+                                        <li
+                                            className={cn(
+                                                hasNestedList ? "list-none -ml-4" : "ml-0",
+                                            )}
+                                            {...props}
+                                        >
+                                            {children}
+                                        </li>
+                                    );
                                 },
                                 h1({ children }) {
-                                    return <h1 className="text-base md:text-lg font-bold mb-2">{children}</h1>;
+                                    return (
+                                        <h1 className="text-base md:text-lg font-bold mb-2">
+                                            {children}
+                                        </h1>
+                                    );
                                 },
                                 h2({ children }) {
-                                    return <h2 className="text-sm md:text-base font-bold mb-2">{children}</h2>;
+                                    return (
+                                        <h2 className="text-sm md:text-base font-bold mb-2">
+                                            {children}
+                                        </h2>
+                                    );
                                 },
                                 h3({ children }) {
-                                    return <h3 className="text-xs md:text-sm font-bold mb-1">{children}</h3>;
+                                    return (
+                                        <h3 className="text-xs md:text-sm font-bold mb-1">
+                                            {children}
+                                        </h3>
+                                    );
                                 },
                                 strong({ children }) {
                                     return <strong className="font-semibold">{children}</strong>;
                                 },
                                 a({ href, children }) {
                                     return (
-                                        <a href={href} className="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href={href}
+                                            className="text-blue-600 underline hover:text-blue-800"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             {children}
                                         </a>
                                     );
