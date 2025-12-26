@@ -12,6 +12,11 @@ import {
 } from '@/types';
 
 export const setupRoutes = (app: Application, prisma: PrismaClient): void => {
+
+    app.get('/health', (req: Request, res: Response) => {
+        res.status(200).send('ok');
+    });
+
     app.get('/', (req: Request, res: Response) => {
         res.send('Backend API');
     });
