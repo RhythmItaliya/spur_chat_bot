@@ -107,3 +107,9 @@ Rhythm Italiya
 ## 📄 License
 
 ISC
+
+## 🤝 Contributing
+
+For detailed setup instructions for each component, refer to:
+- [Frontend README](./frontend/README.md)
+- [Backend README](./backend/README.md)
